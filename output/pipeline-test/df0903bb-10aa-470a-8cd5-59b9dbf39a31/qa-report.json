@@ -1,0 +1,99 @@
+﻿{
+    "job_path":  "C:\\work\\output\\pipeline-test\\df0903bb-10aa-470a-8cd5-59b9dbf39a31\\job.json",
+    "generated_at":  "2026-07-15T02:55:20.8174134Z",
+    "score":  15,
+    "total":  15,
+    "passed":  true,
+    "checks":  [
+                   {
+                       "name":  "article_url",
+                       "passed":  true,
+                       "message":  "기사 URL 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "article_id",
+                       "passed":  true,
+                       "message":  "기사 ID 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "article_title",
+                       "passed":  true,
+                       "message":  "원문 제목 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "market_label",
+                       "passed":  true,
+                       "message":  "시장 라벨 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "background",
+                       "passed":  true,
+                       "message":  "배경 이미지 파일 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page1_headline",
+                       "passed":  true,
+                       "message":  "1페이지 제목 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page1_subtitle",
+                       "passed":  true,
+                       "message":  "1페이지 서브타이틀 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page2_paragraphs",
+                       "passed":  true,
+                       "message":  "2페이지 문단 3개",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page3_evaluation",
+                       "passed":  true,
+                       "message":  "3페이지 평가값 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page3_paragraphs",
+                       "passed":  true,
+                       "message":  "3페이지 문단 3개",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "instagram",
+                       "passed":  true,
+                       "message":  "인스타 계정 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "headline_length",
+                       "passed":  true,
+                       "message":  "1페이지 제목 길이",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "memory2_length",
+                       "passed":  true,
+                       "message":  "2페이지 결론 길이",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "memory3_length",
+                       "passed":  true,
+                       "message":  "3페이지 결론 길이",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "page_overlap",
+                       "passed":  true,
+                       "message":  "2·3페이지 중복 토큰: ",
+                       "critical":  false
+                   }
+               ]
+}

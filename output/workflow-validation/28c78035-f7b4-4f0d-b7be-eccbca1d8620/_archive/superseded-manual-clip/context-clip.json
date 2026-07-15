@@ -1,0 +1,13 @@
+{
+  "role": "person_context_video",
+  "source_url": "https://www.youtube.com/watch?v=j1vGFpd49wM",
+  "source_name": "CNBC Television",
+  "subject": "Warren Buffett",
+  "clip_start": "00:00:28",
+  "clip_end": "00:00:44",
+  "source_clip": "source-context-buffett.mp4",
+  "rendered_card": "page-02-context-video.mp4",
+  "usage_rule": "Context footage only; not proof of the Gates Foundation donation event.",
+  "rights_status": "review_required",
+  "editorial_status": "needs_fact_check"
+}

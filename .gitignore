@@ -1,0 +1,7 @@
+node_modules/
+.agents/
+output/_tests/
+output/x-candidates/
+**/qa-*.png
+**/qa-*.mp4
+**/_subtitles/

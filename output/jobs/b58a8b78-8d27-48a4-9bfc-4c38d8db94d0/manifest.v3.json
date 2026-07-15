@@ -1,0 +1,12 @@
+{
+  "version": "3.0.0",
+  "status": "needs_rights_review",
+  "canvas": "1080x1350",
+  "assets": [
+    { "position": "01 / 05", "role": "hook", "file": "page-01-hook.png", "format": "png" },
+    { "position": "02 / 05", "role": "evidence_video", "file": "page-02-evidence.mp4", "format": "mp4", "duration_seconds": 12, "rights_status": "review_required" },
+    { "position": "03 / 05", "role": "analysis", "file": "page-03-analysis.png", "format": "png" },
+    { "position": "04 / 05", "role": "judgment", "file": "page-04-judgment.png", "format": "png" },
+    { "position": "05 / 05", "role": "cta", "file": "page-05-cta.png", "format": "png" }
+  ]
+}

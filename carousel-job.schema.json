@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OneDayTrading Carousel Job",
+  "type": "object",
+  "required": ["workflow_version", "status", "article", "visual", "pages", "qa"],
+  "properties": {
+    "workflow_version": {"type": "string"},
+    "status": {"enum": ["needs_image", "draft", "ready", "approved", "rejected"]},
+    "article": {
+      "type": "object",
+      "required": ["article_url", "article_id", "title", "body", "category", "market_label"],
+      "properties": {
+        "article_url": {"type": "string", "format": "uri"},
+        "canonical_url": {"type": "string", "format": "uri"},
+        "article_id": {"type": "string", "minLength": 1},
+        "title": {"type": "string", "minLength": 1},
+        "description": {"type": "string"},
+        "body": {"type": "string", "minLength": 1},
+        "category": {"type": "string", "minLength": 1},
+        "market_label": {"enum": ["국내주식", "해외주식", "글로벌증시", "증시·경제", "크립토"]},
+        "published_at": {"type": "string"}
+      }
+    },
+    "visual": {
+      "type": "object",
+      "required": ["strategy", "subject", "background_path", "license"],
+      "properties": {
+        "strategy": {"enum": ["licensed_crop", "reference_recompose", "new_editorial", "manual_background", "manual_review"]},
+        "subject": {"type": "string"},
+        "background_path": {"type": "string", "minLength": 1},
+        "source_url": {"type": "string"},
+        "license": {"enum": ["owned", "licensed", "generated_from_reference", "review_required", "not_for_use"]},
+        "palette": {"type": "object"}
+      }
+    },
+    "evidence": {"type": "array"},
+    "learning": {"type": "object"},
+    "pages": {
+      "type": "object",
+      "required": ["page1", "page2", "page3", "page4"],
+      "properties": {
+        "page1": {"type": "object", "required": ["breaking_label", "headline", "subtitle", "cta"]},
+        "page2": {"type": "object", "required": ["analysis_headline", "quick_answer", "paragraphs", "memory_line"]},
+        "page3": {"type": "object", "required": ["evaluation", "evaluation_headline", "evaluation_summary", "expect", "verify", "judge", "paragraphs", "memory_line"]},
+        "page4": {"type": "object", "required": ["instagram_handle", "website"]}
+      }
+    },
+    "qa": {"type": "object", "required": ["approved", "warnings"]}
+  }
+}

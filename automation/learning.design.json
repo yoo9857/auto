@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "기사 정확성을 보존하면서 독자 반응과 편집 품질을 함께 높이는 4페이지 뉴스 캐러셀 학습 설계서",
+  "principles": [
+    "원문에 없는 사실·수치·인과관계를 생성하지 않는다.",
+    "성과 지표는 정확성·가독성 심사를 통과한 결과 안에서만 최적화한다.",
+    "학습 대상은 문장 복제가 아닌 재사용 가능한 전략이다.",
+    "선택·평가·변경 사유를 모두 기록해 사람이 감사할 수 있어야 한다."
+  ],
+  "selection": {
+    "exploration_rate": 0.15,
+    "minimum_samples_before_ranking": 3,
+    "cold_start_score": 0.6,
+    "feedback_store": "learning/feedback.jsonl"
+  },
+  "strategy_groups": {
+    "writing": {
+      "candidates": [
+        {"id":"fact-impact-variable","instruction":"확인된 사실 → 시장 영향 경로 → 미확인 변수 → 판단 기준 순으로 작성한다."},
+        {"id":"change-number-meaning","instruction":"무엇이 달라졌는지 → 핵심 수치 → 투자자 의미 → 반대 시나리오 순으로 작성한다."},
+        {"id":"question-evidence-verdict","instruction":"독자의 핵심 질문 → 기사 근거 → 기대와 위험 → 조건부 결론 순으로 작성한다."}
+      ]
+    },
+    "visual": {
+      "candidates": [
+        {"id":"hero-object-context","instruction":"기사의 핵심 제품·인물을 크게 두고 산업 맥락을 배경에 배치한다."},
+        {"id":"documentary-scene","instruction":"뉴스 현장을 보도 사진처럼 묘사하고 과장된 상징은 배제한다."},
+        {"id":"macro-detail","instruction":"핵심 사물의 사실적인 근접 장면과 관련 환경을 함께 표현한다."}
+      ]
+    },
+    "palette": {
+      "candidates": [
+        {"id":"image-match","instruction":"기사 배경 이미지의 대표 색상을 분석한 공통 팔레트를 적용한다."},
+        {"id":"stable-random","instruction":"브랜드 가독성 기준을 통과한 팔레트를 기사 ID 기반으로 선택한다."}
+      ]
+    }
+  },
+  "feedback_contract": {
+    "required": ["decision", "quality.accuracy", "quality.readability", "quality.image_fit"],
+    "dimensions": [
+      {"path":"quality.accuracy","weight":0.3,"type":"scale","maximum":5},
+      {"path":"quality.readability","weight":0.2,"type":"scale","maximum":5},
+      {"path":"quality.image_fit","weight":0.15,"type":"scale","maximum":5},
+      {"path":"decision","weight":0.15,"type":"decision","map":{"approved":1,"revised":0.65,"rejected":0}},
+      {"path":"metrics.completion_rate","weight":0.1,"type":"scale","maximum":100,"optional":true},
+      {"path":"metrics.engagement_rate","weight":0.1,"type":"scale","maximum":1,"optional":true}
+    ]
+  },
+  "guardrails": {
+    "block_learning_on": ["factual_error", "copyright_or_identity_risk", "misleading_claim"],
+    "require_human_approval_for": ["face_or_public_figure", "medical_legal_financial_claim", "unverified_market_prediction"]
+  }
+}

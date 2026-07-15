@@ -1,0 +1,90 @@
+﻿{
+    "generated_at":  "2026-07-15T06:48:35.0782375Z",
+    "candidates":  [
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=ZhtQg78LSUk",
+                           "post_id":  "ZhtQg78LSUk",
+                           "author_hint":  "Investor Center",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Center",
+                                                   "upload_date":  null,
+                                                   "title":  "Warren Buffett FINALLY Breaks His Silence (2025 Berkshire Annual Meeting)",
+                                                   "description":  "Warren Buffett recently spoke on topics related to Tariffs, US budget deficit, stock market volatility, Artificial Intelligence, the stock ...",
+                                                   "duration":  1476
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=j1vGFpd49wM",
+                           "post_id":  "j1vGFpd49wM",
+                           "author_hint":  "CNBC Television",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "CNBC Television",
+                                                   "upload_date":  null,
+                                                   "title":  "Watch Warren Buffett preside over the full 2025 Berkshire Hathaway annual shareholder meeting",
+                                                   "description":  "Berkshire Hathaway Chairman and CEO Warren Buffett presides over the 2025 Berkshire Hathaway annual meeting. For access ...",
+                                                   "duration":  16429
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=kgKEiP6L9EQ",
+                           "post_id":  "kgKEiP6L9EQ",
+                           "author_hint":  "Investor Archive",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Archive",
+                                                   "upload_date":  null,
+                                                   "title":  "1994 Berkshire Hathaway Annual Meeting (Full Version)",
+                                                   "description":  "Berkshire Hathaway annual shareholder meeting (April 25, 1994) Video combines Morning session \u0026 Afternoon session.",
+                                                   "duration":  12748
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=Z9CXQ6NZFYA",
+                           "post_id":  "Z9CXQ6NZFYA",
+                           "author_hint":  "Investor Archive",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Archive",
+                                                   "upload_date":  null,
+                                                   "title":  "1996 Berkshire Hathaway Annual Meeting (Full Version)",
+                                                   "description":  "Berkshire Hathaway annual shareholder meeting (May 6, 1996) Video combines Morning session \u0026 Afternoon session.",
+                                                   "duration":  18067
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=mdX5JbDUYs4",
+                           "post_id":  "mdX5JbDUYs4",
+                           "author_hint":  "Investor Archive",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Archive",
+                                                   "upload_date":  null,
+                                                   "title":  "1995 Berkshire Hathaway Annual Meeting (Full Version)",
+                                                   "description":  "Berkshire Hathaway annual shareholder meeting (May 1, 1995) Video combines Morning session \u0026 Afternoon session.",
+                                                   "duration":  16946
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       }
+                   ]
+}

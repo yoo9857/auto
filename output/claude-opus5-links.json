@@ -1,0 +1,94 @@
+﻿{
+    "generated_at":  "2026-07-15T04:08:59.9337392Z",
+    "query":  [
+                  "Claude Opus 5"
+              ],
+    "source":  "Bing web search; no X API used",
+    "limitations":  [
+                        "寃?됱뿏吏꾩뿉 ?됱씤??怨듦컻 寃뚯떆臾쇰쭔 諛섑솚",
+                        "寃뚯떆臾?蹂몃Ц쨌?곸긽 ?뚯씪쨌?뺥솗??諛섏쓳 ?섎뒗 蹂꾨룄 寃???꾩슂"
+                    ],
+    "candidates":  [
+                       {
+                           "post_url":  "https://x.com/LuminaXspace/status/2076243903175446986",
+                           "author_hint":  "LuminaXspace",
+                           "post_id":  "2076243903175446986",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/bridgemindai/status/2077125561747406964",
+                           "author_hint":  "bridgemindai",
+                           "post_id":  "2077125561747406964",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/bindureddy/status/2077098296477426151",
+                           "author_hint":  "bindureddy",
+                           "post_id":  "2077098296477426151",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/Mr_Salio/status/2076966631406743559",
+                           "author_hint":  "Mr_Salio",
+                           "post_id":  "2076966631406743559",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/kimmonismus/status/2037461154088296748",
+                           "author_hint":  "kimmonismus",
+                           "post_id":  "2037461154088296748",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/kimmonismus/status/2037458313831395430",
+                           "author_hint":  "kimmonismus",
+                           "post_id":  "2037458313831395430",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/SemiAnalysis_/status/2036548649728053498",
+                           "author_hint":  "SemiAnalysis_",
+                           "post_id":  "2036548649728053498",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/LuminaXspace/status/2076976628094095448",
+                           "author_hint":  "LuminaXspace",
+                           "post_id":  "2076976628094095448",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://x.com/synthwavedd/status/2077085180175544375",
+                           "author_hint":  "synthwavedd",
+                           "post_id":  "2077085180175544375",
+                           "discovered_by":  "web_search",
+                           "matched_query":  "Claude Opus 5",
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       }
+                   ]
+}

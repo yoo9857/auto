@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "selection_policy": "no_repeat_until_catalog_exhausted",
+  "tracks": [
+    {"id":"m83-midnight-city","track":"Midnight City","artist":"M83","moods":["tech","momentum","night"]},
+    {"id":"thexx-intro","track":"Intro","artist":"The xx","moods":["analysis","premium","minimal"]},
+    {"id":"daftpunk-derezzed","track":"Derezzed","artist":"Daft Punk","moods":["tech","urgent","momentum"]},
+    {"id":"tycho-awake","track":"Awake","artist":"Tycho","moods":["analysis","calm","future"]},
+    {"id":"odessa-a-moment-apart","track":"A Moment Apart","artist":"ODESZA","moods":["future","premium","momentum"]},
+    {"id":"flume-never-be-like-you","track":"Never Be Like You","artist":"Flume","moods":["tech","momentum","modern"]},
+    {"id":"bonobo-kerala","track":"Kerala","artist":"Bonobo","moods":["analysis","calm","premium"]},
+    {"id":"kavinsky-nightcall","track":"Nightcall","artist":"Kavinsky","moods":["urgent","night","modern"]},
+    {"id":"tameimpala-let-it-happen","track":"Let It Happen","artist":"Tame Impala","moods":["future","momentum","modern"]},
+    {"id":"justice-genesis","track":"Genesis","artist":"Justice","moods":["urgent","tech","impact"]},
+    {"id":"bicep-glue","track":"Glue","artist":"Bicep","moods":["analysis","night","momentum"]},
+    {"id":"rue-des-sevigne-luxury","track":"Luxury","artist":"Azealia Banks","moods":["premium","momentum","modern"]}
+  ]
+}

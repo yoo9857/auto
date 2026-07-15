@@ -1,0 +1,129 @@
+﻿{
+    "job_path":  "C:\\work\\output\\jobs\\b58a8b78-8d27-48a4-9bfc-4c38d8db94d0\\job.final.json",
+    "generated_at":  "2026-07-15T05:11:58.5065089Z",
+    "score":  20,
+    "total":  20,
+    "passed":  true,
+    "checks":  [
+                   {
+                       "name":  "article_url",
+                       "passed":  true,
+                       "message":  "기사 URL 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "article_id",
+                       "passed":  true,
+                       "message":  "기사 ID 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "article_title",
+                       "passed":  true,
+                       "message":  "원문 제목 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "market_label",
+                       "passed":  true,
+                       "message":  "시장 라벨 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "background",
+                       "passed":  true,
+                       "message":  "배경 이미지 파일 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "source_snapshot",
+                       "passed":  true,
+                       "message":  "원문 스냅샷과 작업 기사 일치",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "background_readable",
+                       "passed":  true,
+                       "message":  "배경 이미지 해상도 검증: 1122x1402",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "visual_license",
+                       "passed":  true,
+                       "message":  "이미지 라이선스 상태 기록",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "page1_headline",
+                       "passed":  true,
+                       "message":  "1페이지 제목 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page1_subtitle",
+                       "passed":  true,
+                       "message":  "1페이지 서브타이틀 필수",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page2_paragraphs",
+                       "passed":  true,
+                       "message":  "2페이지 문단 3개",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page3_evaluation",
+                       "passed":  true,
+                       "message":  "3페이지 평가값 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "page3_paragraphs",
+                       "passed":  true,
+                       "message":  "3페이지 문단 3개",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "instagram",
+                       "passed":  true,
+                       "message":  "인스타 계정 검증",
+                       "critical":  true
+                   },
+                   {
+                       "name":  "learning_strategy",
+                       "passed":  true,
+                       "message":  "설계서 기반 작성·이미지 전략 기록",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "evidence_ledger",
+                       "passed":  true,
+                       "message":  "원문 근거 기록",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "headline_length",
+                       "passed":  true,
+                       "message":  "1페이지 제목 길이",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "memory2_length",
+                       "passed":  true,
+                       "message":  "2페이지 결론 길이",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "memory3_length",
+                       "passed":  true,
+                       "message":  "3페이지 결론 길이",
+                       "critical":  false
+                   },
+                   {
+                       "name":  "page_overlap",
+                       "passed":  true,
+                       "message":  "2·3페이지 중복 토큰: H200, 판매가, 중국향, 기대가, 있다.",
+                       "critical":  false
+                   }
+               ]
+}

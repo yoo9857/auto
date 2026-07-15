@@ -1,0 +1,10 @@
+{
+  "profile_name": "ai-news-kr",
+  "queries": [
+    "(AI OR 인공지능 OR OpenAI OR Google OR Anthropic) lang:ko -is:retweet",
+    "(AI OR artificial intelligence) (launch OR released OR announced) -is:retweet"
+  ],
+  "trusted_accounts": ["OpenAI", "GoogleDeepMind", "AnthropicAI"],
+  "minimum_score": 25,
+  "require_video": false
+}

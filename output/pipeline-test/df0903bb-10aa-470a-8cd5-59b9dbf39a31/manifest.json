@@ -1,0 +1,13 @@
+﻿{
+    "workflow_version":  "2.0.0",
+    "article_id":  "df0903bb-10aa-470a-8cd5-59b9dbf39a31",
+    "generated_at":  "2026-07-15T02:55:24.6620161Z",
+    "outputs":  [
+                    "output\\pipeline-test\\df0903bb-10aa-470a-8cd5-59b9dbf39a31\\page-01.png",
+                    "output\\pipeline-test\\df0903bb-10aa-470a-8cd5-59b9dbf39a31\\page-02.png",
+                    "output\\pipeline-test\\df0903bb-10aa-470a-8cd5-59b9dbf39a31\\page-03.png",
+                    "output\\pipeline-test\\df0903bb-10aa-470a-8cd5-59b9dbf39a31\\page-04.png"
+                ],
+    "qa_report":  "output\\pipeline-test\\df0903bb-10aa-470a-8cd5-59b9dbf39a31\\qa-report.json",
+    "approved":  false
+}

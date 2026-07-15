@@ -1,0 +1,17 @@
+{
+  "name": "onedaytrading-instagram-publisher",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Chrome-session based Instagram carousel publisher",
+  "scripts": {
+    "instagram:setup": "node automation/chrome_instagram_publisher.js setup",
+    "instagram:check": "node automation/chrome_instagram_publisher.js check",
+    "instagram:check-background": "node automation/chrome_instagram_publisher.js check --background",
+    "instagram:plan": "node automation/chrome_instagram_publisher.js plan",
+    "instagram:publish": "node automation/chrome_instagram_publisher.js publish",
+    "instagram:publish-background": "node automation/chrome_instagram_publisher.js publish --background"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0"
+  }
+}

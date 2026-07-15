@@ -1,0 +1,150 @@
+﻿{
+    "workflow_version":  "2.0.0",
+    "status":  "approved",
+    "article":  {
+                    "article_url":  "https://onedaytrading.net/economy-news/b58a8b78-8d27-48a4-9bfc-4c38d8db94d0",
+                    "canonical_url":  "https://onedaytrading.net/economy-news/b58a8b78-8d27-48a4-9bfc-4c38d8db94d0",
+                    "article_id":  "b58a8b78-8d27-48a4-9bfc-4c38d8db94d0",
+                    "title":  "엔비디아 H200 중국 출하 시작, 최상위 AI칩까지 넘은 수출 규제선",
+                    "description":  "엔비디아 H200의 중국 출하가 시작되며 중국향 데이터센터 매출 회복 기대가 커졌다.",
+                    "body":  "원문은 H200 중국 출하, 엔비디아 장중 4% 상승, HBM3e 공급망 기대와 정책 재강화 위험을 분석한다.",
+                    "category":  "반도체",
+                    "market_label":  "해외주식",
+                    "source_name":  "연합뉴스 증권",
+                    "published_at":  "2026-07-14T23:02:21.829Z",
+                    "og_image":  "https://onedaytrading.net/i/news/cards/6ec9bc8050c5ed9b.jpg"
+                },
+    "visual":  {
+                   "strategy":  "reference_recompose",
+                   "subject":  "H200급 데이터센터 AI 가속기와 HBM 메모리, 중국향 출하",
+                   "background_path":  "output/jobs/b58a8b78-8d27-48a4-9bfc-4c38d8db94d0/background.png",
+                   "source_url":  "https://onedaytrading.net/i/news/cards/6ec9bc8050c5ed9b.jpg",
+                   "license":  "generated_from_reference",
+                   "palette":  {
+                                   "mode":  "match",
+                                   "name":  "cobalt-lime",
+                                   "background":  "#050B16",
+                                   "surface":  "#102747",
+                                   "primary":  "#4F8CFF",
+                                   "secondary":  "#B7E34B"
+                               }
+               },
+    "evidence":  [
+                     {
+                         "statement":  "H200 중국향 출하가 시작됐다.",
+                         "source":  "기사 3줄 브리핑",
+                         "confidence":  1.0
+                     },
+                     {
+                         "statement":  "소식 직후 엔비디아 주가가 장중 4% 상승했다.",
+                         "source":  "기사 3줄 브리핑",
+                         "confidence":  1.0
+                     },
+                     {
+                         "statement":  "H200에는 HBM3e가 탑재된다.",
+                         "source":  "숫자와 맥락으로 보기",
+                         "confidence":  0.95
+                     },
+                     {
+                         "statement":  "수출 통제 재강화 가능성이 남아 있다.",
+                         "source":  "리스크 체크",
+                         "confidence":  1.0
+                     }
+                 ],
+    "pages":  {
+                  "page1":  {
+                                "breaking_label":  "긴급속보",
+                                "headline":  "엔비디아 H200\n중국 출하 시작",
+                                "subtitle":  "최상위 AI칩까지 넘어선\n미국의 수출 규제선",
+                                "cta":  "핵심 분석 보기 →"
+                            },
+                  "page2":  {
+                                "analysis_headline":  "중국 매출의 빈칸,\nH200이 다시 채울까",
+                                "quick_answer":  "출하 재개는 분명한 변화다. 다만 정책 신호가 실제 주문과 매출로 이어지는지는 아직 확인이 필요하다.",
+                                "paragraphs":  [
+                                                   "그동안 엔비디아가 중국에 판매한 제품은 성능을 낮춘 대체 모델이 중심이었다. H200 출하는 상위 AI칩 판매가 다시 열렸다는 점에서 중국향 데이터센터 매출 회복의 첫 신호로 읽힌다.",
+                                                   "수익 효과는 판매량과 평균판매단가에서 갈린다. H200 물량이 늘면 엔비디아뿐 아니라 HBM3e를 공급하는 SK하이닉스와 관련 장비주까지 기대가 번질 수 있다.",
+                                                   "하지만 이번 반응은 확정 주문량보다 정책 발언에 먼저 움직였다. 수출 통제가 다시 강화되거나 중국 기업의 실제 구매가 기대에 못 미치면 장중 4% 상승분은 되돌려질 수 있다."
+                                               ],
+                                "memory_line":  "규제 완화의 진짜 크기는 다음 분기 중국향 매출이 말해준다."
+                            },
+                  "page3":  {
+                                "evaluation":  "제한적 호재",
+                                "evaluation_headline":  "지금 평가는\n\u0027제한적 호재\u0027",
+                                "evaluation_summary":  "출하 시작은 매출 회복의 실질적 신호다. 그러나 정책 지속성과 실제 중국 주문량은 아직 숫자로 확인되지 않았다.",
+                                "expect":  "중국향 고성능 GPU 매출 회복",
+                                "verify":  "H200 주문량과 수출 정책 지속성",
+                                "judge":  "다음 분기 중국 매출 비중",
+                                "paragraphs":  [
+                                                   "상위 제품 판매가 재개되면 하위 대체 칩보다 높은 평균판매단가를 기대할 수 있다. HBM3e 공급망에도 추가 물량 기대가 생기는 이유다.",
+                                                   "다만 수출 통제는 행정부 판단에 따라 다시 바뀔 수 있다. H200이 세대 전환 중인 제품이라는 점도 전체 실적 기여를 제한할 변수다.",
+                                                   "평가를 끌어올릴 기준은 명확하다. 다음 분기 실적에서 중국향 매출 비중과 H200 관련 주문이 실제로 늘어나는지 확인해야 한다."
+                                               ],
+                                "memory_line":  "주가보다 먼저 확인할 숫자는 중국향 H200 매출이다."
+                            },
+                  "page4":  {
+                                "instagram_handle":  "@onedaytrading.io",
+                                "website":  "onedaytrading.net"
+                            }
+              },
+    "qa":  {
+               "approved":  true,
+               "warnings":  [
+                                "게시 전 최종 편집 승인 필요",
+                                "생성 배경 이미지 사용"
+                            ]
+           },
+    "learning":  {
+                     "design_version":  "1.0.0",
+                     "selected_at":  "2026-07-15T05:11:58.3271974Z",
+                     "strategies":  {
+                                        "writing":  "question-evidence-verdict",
+                                        "visual":  "macro-detail",
+                                        "palette":  "stable-random"
+                                    },
+                     "instructions":  {
+                                          "writing":  "독자의 핵심 질문 → 기사 근거 → 기대와 위험 → 조건부 결론 순으로 작성한다.",
+                                          "visual":  "핵심 사물의 사실적인 근접 장면과 관련 환경을 함께 표현한다.",
+                                          "palette":  "브랜드 가독성 기준을 통과한 팔레트를 기사 ID 기반으로 선택한다."
+                                      },
+                     "selection_reason":  {
+                                              "writing":  "best_score",
+                                              "visual":  "best_score",
+                                              "palette":  "best_score"
+                                          },
+                     "feedback_samples":  0,
+                     "principles":  [
+                                        "원문에 없는 사실·수치·인과관계를 생성하지 않는다.",
+                                        "성과 지표는 정확성·가독성 심사를 통과한 결과 안에서만 최적화한다.",
+                                        "학습 대상은 문장 복제가 아닌 재사용 가능한 전략이다.",
+                                        "선택·평가·변경 사유를 모두 기록해 사람이 감사할 수 있어야 한다."
+                                    ],
+                     "guardrails":  {
+                                        "block_learning_on":  [
+                                                                  "factual_error",
+                                                                  "copyright_or_identity_risk",
+                                                                  "misleading_claim"
+                                                              ],
+                                        "require_human_approval_for":  [
+                                                                           "face_or_public_figure",
+                                                                           "medical_legal_financial_claim",
+                                                                           "unverified_market_prediction"
+                                                                       ]
+                                    },
+                     "palette_mode_applied":  "match"
+                 },
+    "instagram_tracking":  {
+                               "handle":  "@onedaytrading.io",
+                               "profile_url":  "https://www.instagram.com/onedaytrading.io/",
+                               "code":  "ODT-b58a8b78-8d27-48a4-9bfc-4c38d8db94d0",
+                               "media_id":  "",
+                               "collection_mode":  "manual"
+                           },
+    "approval":  {
+                     "decision":  "approved",
+                     "reviewer":  "onedaytrading.io owner",
+                     "reviewed_at":  "2026-07-15T06:27:14.2168058Z",
+                     "notes":  "Owner requested Chrome carousel upload using DB/step1 assets.",
+                     "qa_report":  "C:\\work\\output\\jobs\\b58a8b78-8d27-48a4-9bfc-4c38d8db94d0\\qa-report.json"
+                 }
+}

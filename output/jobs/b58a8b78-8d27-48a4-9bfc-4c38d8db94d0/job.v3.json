@@ -1,0 +1,26 @@
+{
+  "workflow_version": "3.0.0",
+  "status": "needs_rights_review",
+  "extends": "job.final.json",
+  "workflow": "N200 five-card news flow",
+  "sequence": [
+    { "position": "01", "role": "hook", "output": "page-01-hook.png" },
+    {
+      "position": "02",
+      "role": "evidence_video",
+      "output": "page-02-evidence.mp4",
+      "source_url": "https://x.com/Reuters/status/2034248452398608689/video/1",
+      "source_name": "Reuters",
+      "rights_status": "review_required",
+      "fact_check_status": "needs_review"
+    },
+    { "position": "03", "role": "analysis", "output": "page-03-analysis.png" },
+    { "position": "04", "role": "judgment", "output": "page-04-judgment.png" },
+    { "position": "05", "role": "cta", "output": "page-05-cta.png" }
+  ],
+  "evidence_video": {
+    "headline": "H200 China approval, a signal for shipment resumption",
+    "summary": "Reuters reported that Beijing approved Nvidia H200 AI-chip sales in China. Shipment scale and policy continuity still require confirmation.",
+    "display_rule": "contain entire source video; do not crop"
+  }
+}

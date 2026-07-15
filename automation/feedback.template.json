@@ -1,0 +1,18 @@
+{
+  "decision": "approved",
+  "quality": {
+    "accuracy": 5,
+    "readability": 4,
+    "image_fit": 4
+  },
+  "metrics": {
+    "reach": 0,
+    "likes": 0,
+    "comments": 0,
+    "saves": 0,
+    "shares": 0,
+    "views": 0
+  },
+  "risk_flags": [],
+  "notes": "인스타 앱 또는 Meta Business Suite 인사이트를 보고 입력"
+}

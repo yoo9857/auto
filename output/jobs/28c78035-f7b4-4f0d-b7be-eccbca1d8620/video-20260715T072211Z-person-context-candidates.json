@@ -1,0 +1,498 @@
+﻿{
+    "generated_at":  "2026-07-15T07:23:07.1754918Z",
+    "selector_version":  "2.2.0",
+    "selection_mode":  "person_context",
+    "topic":  "Warren Buffett",
+    "topic_aliases":  [
+                          "Berkshire Hathaway",
+                          "Berkshire B",
+                          "Buffett foundation donation"
+                      ],
+    "event_terms":  null,
+    "format_terms":  [
+                         "annual meeting",
+                         "interview",
+                         "speech",
+                         "remarks",
+                         "conversation"
+                     ],
+    "reference_date":  "2026-07-15",
+    "policy":  {
+                   "gates":  [
+                                 "confirmed_video",
+                                 "topic_match",
+                                 "event_match",
+                                 "person_format_match",
+                                 "publish_date",
+                                 "age_window",
+                                 "duration_window"
+                             ],
+                   "allow_unknown_publish_date":  true,
+                   "ranking":  [
+                                   "quality_grade",
+                                   "newest_published_at",
+                                   "quality_score"
+                               ],
+                   "minimum_grade":  "S",
+                   "automatic_download":  false,
+                   "automatic_publish":  false
+               },
+    "recommended_candidate":  [
+                                  {
+                                      "post_url":  "https://www.youtube.com/watch?v=QQOWQcnNmr0",
+                                      "post_id":  "QQOWQcnNmr0",
+                                      "source_type":  "youtube_search",
+                                      "author":  "CNBC Television",
+                                      "official_author_match":  false,
+                                      "discovered_by":  "yt_dlp_search",
+                                      "selection_mode":  "person_context",
+                                      "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                                      "video_confirmed":  true,
+                                      "duration_seconds":  1528,
+                                      "clip_required":  true,
+                                      "published_at":  null,
+                                      "age_days":  null,
+                                      "topic_matches":  [
+                                                            "Warren Buffett",
+                                                            "Berkshire Hathaway"
+                                                        ],
+                                      "event_matches":  {
+
+                                                        },
+                                      "format_matches":  [
+                                                             "annual meeting",
+                                                             "interview"
+                                                         ],
+                                      "trusted_author":  true,
+                                      "quality_score":  86,
+                                      "quality_grade":  "S",
+                                      "quality_grade_rank":  3,
+                                      "eligible":  true,
+                                      "rejection_reasons":  [
+
+                                                            ],
+                                      "title":  "Watch CNBC\u0027s full interview with Berkshire Hathaway Chair Warren Buffett",
+                                      "description":  "CNBC\u0027s Becky Quick sits down with Berkshire Hathaway Chair Warren Buffett at the 2026 Berkshire Hathaway annual meeting.",
+                                      "metadata_source":  "live",
+                                      "editorial_review":  [
+                                                               "Confirm the actual footage depicts the matched event.",
+                                                               "Confirm article facts against the original report.",
+                                                               "Confirm publication and reuse rights.",
+                                                               "Choose and verify an 8-150 second excerpt before rendering."
+                                                           ],
+                                      "status":  "needs_clip_review",
+                                      "rights_status":  "review_required"
+                                  }
+                              ],
+    "candidates":  [
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=QQOWQcnNmr0",
+                           "post_id":  "QQOWQcnNmr0",
+                           "source_type":  "youtube_search",
+                           "author":  "CNBC Television",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  1528,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  [
+                                                 "Warren Buffett",
+                                                 "Berkshire Hathaway"
+                                             ],
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  [
+                                                  "annual meeting",
+                                                  "interview"
+                                              ],
+                           "trusted_author":  true,
+                           "quality_score":  86,
+                           "quality_grade":  "S",
+                           "quality_grade_rank":  3,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "Watch CNBC\u0027s full interview with Berkshire Hathaway Chair Warren Buffett",
+                           "description":  "CNBC\u0027s Becky Quick sits down with Berkshire Hathaway Chair Warren Buffett at the 2026 Berkshire Hathaway annual meeting.",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=JvEas_zZ4fM",
+                           "post_id":  "JvEas_zZ4fM",
+                           "source_type":  "youtube_search",
+                           "author":  "CNBC Television",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  7258,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  [
+                                                 "Warren Buffett",
+                                                 "Berkshire Hathaway"
+                                             ],
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "interview",
+                           "trusted_author":  true,
+                           "quality_score":  79,
+                           "quality_grade":  "A",
+                           "quality_grade_rank":  2,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "Watch CNBC\u0027s full interview with Berkshire Hathaway CEO Warren Buffett",
+                           "description":  "Berkshire Hathaway\u0027s chairman and CEO Warren Buffett sat down with CNBC\u0027s Becky Quick on Monday to answer viewer ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=j1vGFpd49wM",
+                           "post_id":  "j1vGFpd49wM",
+                           "source_type":  "youtube_search",
+                           "author":  "CNBC Television",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  16429,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  [
+                                                 "Warren Buffett",
+                                                 "Berkshire Hathaway"
+                                             ],
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  true,
+                           "quality_score":  79,
+                           "quality_grade":  "A",
+                           "quality_grade_rank":  2,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "Watch Warren Buffett preside over the full 2025 Berkshire Hathaway annual shareholder meeting",
+                           "description":  "Berkshire Hathaway Chairman and CEO Warren Buffett presides over the 2025 Berkshire Hathaway annual meeting. For access ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=mdX5JbDUYs4",
+                           "post_id":  "mdX5JbDUYs4",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Archive",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  16946,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Berkshire Hathaway",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "1995 Berkshire Hathaway Annual Meeting (Full Version)",
+                           "description":  "Berkshire Hathaway annual shareholder meeting (May 1, 1995) Video combines Morning session \u0026 Afternoon session.",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=kgKEiP6L9EQ",
+                           "post_id":  "kgKEiP6L9EQ",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Archive",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  12748,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Berkshire Hathaway",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "1994 Berkshire Hathaway Annual Meeting (Full Version)",
+                           "description":  "Berkshire Hathaway annual shareholder meeting (April 25, 1994) Video combines Morning session \u0026 Afternoon session.",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=Z9CXQ6NZFYA",
+                           "post_id":  "Z9CXQ6NZFYA",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Archive",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  18067,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Berkshire Hathaway",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "1996 Berkshire Hathaway Annual Meeting (Full Version)",
+                           "description":  "Berkshire Hathaway annual shareholder meeting (May 6, 1996) Video combines Morning session \u0026 Afternoon session.",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=8OcegOGAGIs",
+                           "post_id":  "8OcegOGAGIs",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Center",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  453,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Warren Buffett",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "interview",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "Warren Buffett’s Most Iconic Interview Ever",
+                           "description":  "Legendary value investor Warren Buffet in his first ever interview broadcasted on national television. Buffet describes his ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=ZhtQg78LSUk",
+                           "post_id":  "ZhtQg78LSUk",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Center",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  1476,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Warren Buffett",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "Warren Buffett FINALLY Breaks His Silence (2025 Berkshire Annual Meeting)",
+                           "description":  "Warren Buffett recently spoke on topics related to Tariffs, US budget deficit, stock market volatility, Artificial Intelligence, the stock ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=Tr6MMsoWAog",
+                           "post_id":  "Tr6MMsoWAog",
+                           "source_type":  "youtube_search",
+                           "author":  "Yahoo Finance",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  533,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  [
+                                                 "Warren Buffett",
+                                                 "Berkshire Hathaway"
+                                             ],
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  {
+
+                                              },
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  false,
+                           "rejection_reasons":  [
+                                                     "person_format_not_found_in_metadata"
+                                                 ],
+                           "title":  "Warren Buffett shares advice on becoming successful",
+                           "description":  "warrenbuffett #investing #success #money #business #finance #stocks #motivation #wealth Berkshire Hathaway CEO Warren ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "rejected_by_selector",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=rEZukMdkQiA",
+                           "post_id":  "rEZukMdkQiA",
+                           "source_type":  "youtube_search",
+                           "author":  "Aurinna",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  14375,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Warren Buffett",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  {
+
+                                              },
+                           "trusted_author":  false,
+                           "quality_score":  48,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  false,
+                           "rejection_reasons":  [
+                                                     "person_format_not_found_in_metadata"
+                                                 ],
+                           "title":  "Warren Buffett \u0026 Charlie Munger: 100 Years of Financial Wisdom in 4 Hour - Investing/Market Analysis",
+                           "description":  "Like the video? Every thumbs up helps! Also be sure to subscribe to get updates whenever I upload! It\u0027s free for you, and it helps ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "rejected_by_selector",
+                           "rights_status":  "review_required"
+                       }
+                   ]
+}

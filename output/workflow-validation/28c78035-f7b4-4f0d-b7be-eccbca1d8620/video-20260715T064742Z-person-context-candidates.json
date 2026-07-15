@@ -1,0 +1,243 @@
+﻿{
+    "generated_at":  "2026-07-15T06:48:35.1284635Z",
+    "selector_version":  "2.2.0",
+    "selection_mode":  "person_context",
+    "topic":  "Warren Buffett",
+    "topic_aliases":  [
+                          "Berkshire Hathaway",
+                          "Berkshire B",
+                          "Buffett foundation donation"
+                      ],
+    "event_terms":  null,
+    "format_terms":  [
+                         "annual meeting",
+                         "interview",
+                         "speech",
+                         "remarks",
+                         "conversation"
+                     ],
+    "reference_date":  "2026-07-15",
+    "policy":  {
+                   "gates":  [
+                                 "confirmed_video",
+                                 "topic_match",
+                                 "event_match",
+                                 "person_format_match",
+                                 "publish_date",
+                                 "age_window",
+                                 "duration_window"
+                             ],
+                   "allow_unknown_publish_date":  true,
+                   "ranking":  [
+                                   "quality_grade",
+                                   "newest_published_at",
+                                   "quality_score"
+                               ],
+                   "minimum_grade":  "S",
+                   "automatic_download":  false,
+                   "automatic_publish":  false
+               },
+    "recommended_candidate":  [
+
+                              ],
+    "candidates":  [
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=j1vGFpd49wM",
+                           "post_id":  "j1vGFpd49wM",
+                           "source_type":  "youtube_search",
+                           "author":  "CNBC Television",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  16429,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  [
+                                                 "Warren Buffett",
+                                                 "Berkshire Hathaway"
+                                             ],
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  true,
+                           "quality_score":  79,
+                           "quality_grade":  "A",
+                           "quality_grade_rank":  2,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "Watch Warren Buffett preside over the full 2025 Berkshire Hathaway annual shareholder meeting",
+                           "description":  "Berkshire Hathaway Chairman and CEO Warren Buffett presides over the 2025 Berkshire Hathaway annual meeting. For access ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=Z9CXQ6NZFYA",
+                           "post_id":  "Z9CXQ6NZFYA",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Archive",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  18067,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Berkshire Hathaway",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "1996 Berkshire Hathaway Annual Meeting (Full Version)",
+                           "description":  "Berkshire Hathaway annual shareholder meeting (May 6, 1996) Video combines Morning session \u0026 Afternoon session.",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=mdX5JbDUYs4",
+                           "post_id":  "mdX5JbDUYs4",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Archive",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  16946,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Berkshire Hathaway",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "1995 Berkshire Hathaway Annual Meeting (Full Version)",
+                           "description":  "Berkshire Hathaway annual shareholder meeting (May 1, 1995) Video combines Morning session \u0026 Afternoon session.",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=ZhtQg78LSUk",
+                           "post_id":  "ZhtQg78LSUk",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Center",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  1476,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Warren Buffett",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "Warren Buffett FINALLY Breaks His Silence (2025 Berkshire Annual Meeting)",
+                           "description":  "Warren Buffett recently spoke on topics related to Tariffs, US budget deficit, stock market volatility, Artificial Intelligence, the stock ...",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=kgKEiP6L9EQ",
+                           "post_id":  "kgKEiP6L9EQ",
+                           "source_type":  "youtube_search",
+                           "author":  "Investor Archive",
+                           "official_author_match":  false,
+                           "discovered_by":  "yt_dlp_search",
+                           "selection_mode":  "person_context",
+                           "usage_rule":  "Use only as person/context footage. Do not present it as proof of the article event.",
+                           "video_confirmed":  true,
+                           "duration_seconds":  12748,
+                           "clip_required":  true,
+                           "published_at":  null,
+                           "age_days":  null,
+                           "topic_matches":  "Berkshire Hathaway",
+                           "event_matches":  {
+
+                                             },
+                           "format_matches":  "annual meeting",
+                           "trusted_author":  false,
+                           "quality_score":  56,
+                           "quality_grade":  "B",
+                           "quality_grade_rank":  1,
+                           "eligible":  true,
+                           "rejection_reasons":  [
+
+                                                 ],
+                           "title":  "1994 Berkshire Hathaway Annual Meeting (Full Version)",
+                           "description":  "Berkshire Hathaway annual shareholder meeting (April 25, 1994) Video combines Morning session \u0026 Afternoon session.",
+                           "metadata_source":  "live",
+                           "editorial_review":  [
+                                                    "Confirm the actual footage depicts the matched event.",
+                                                    "Confirm article facts against the original report.",
+                                                    "Confirm publication and reuse rights.",
+                                                    "Choose and verify an 8-150 second excerpt before rendering."
+                                                ],
+                           "status":  "needs_clip_review",
+                           "rights_status":  "review_required"
+                       }
+                   ]
+}

@@ -1,0 +1,176 @@
+﻿{
+    "generated_at":  "2026-07-15T07:23:07.1152079Z",
+    "source":  "Bing web search plus yt-dlp discovery; no YouTube API used",
+    "candidates":  [
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=j1vGFpd49wM",
+                           "post_id":  "j1vGFpd49wM",
+                           "author_hint":  "CNBC Television",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "CNBC Television",
+                                                   "upload_date":  null,
+                                                   "title":  "Watch Warren Buffett preside over the full 2025 Berkshire Hathaway annual shareholder meeting",
+                                                   "description":  "Berkshire Hathaway Chairman and CEO Warren Buffett presides over the 2025 Berkshire Hathaway annual meeting. For access ...",
+                                                   "duration":  16429
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=ZhtQg78LSUk",
+                           "post_id":  "ZhtQg78LSUk",
+                           "author_hint":  "Investor Center",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Center",
+                                                   "upload_date":  null,
+                                                   "title":  "Warren Buffett FINALLY Breaks His Silence (2025 Berkshire Annual Meeting)",
+                                                   "description":  "Warren Buffett recently spoke on topics related to Tariffs, US budget deficit, stock market volatility, Artificial Intelligence, the stock ...",
+                                                   "duration":  1476
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=8OcegOGAGIs",
+                           "post_id":  "8OcegOGAGIs",
+                           "author_hint":  "Investor Center",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett interview",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Center",
+                                                   "upload_date":  null,
+                                                   "title":  "Warren Buffett’s Most Iconic Interview Ever",
+                                                   "description":  "Legendary value investor Warren Buffet in his first ever interview broadcasted on national television. Buffet describes his ...",
+                                                   "duration":  453
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=QQOWQcnNmr0",
+                           "post_id":  "QQOWQcnNmr0",
+                           "author_hint":  "CNBC Television",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett interview",
+                           "metadata_inline":  {
+                                                   "uploader":  "CNBC Television",
+                                                   "upload_date":  null,
+                                                   "title":  "Watch CNBC\u0027s full interview with Berkshire Hathaway Chair Warren Buffett",
+                                                   "description":  "CNBC\u0027s Becky Quick sits down with Berkshire Hathaway Chair Warren Buffett at the 2026 Berkshire Hathaway annual meeting.",
+                                                   "duration":  1528
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=JvEas_zZ4fM",
+                           "post_id":  "JvEas_zZ4fM",
+                           "author_hint":  "CNBC Television",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett interview",
+                           "metadata_inline":  {
+                                                   "uploader":  "CNBC Television",
+                                                   "upload_date":  null,
+                                                   "title":  "Watch CNBC\u0027s full interview with Berkshire Hathaway CEO Warren Buffett",
+                                                   "description":  "Berkshire Hathaway\u0027s chairman and CEO Warren Buffett sat down with CNBC\u0027s Becky Quick on Monday to answer viewer ...",
+                                                   "duration":  7258
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=Z9CXQ6NZFYA",
+                           "post_id":  "Z9CXQ6NZFYA",
+                           "author_hint":  "Investor Archive",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Archive",
+                                                   "upload_date":  null,
+                                                   "title":  "1996 Berkshire Hathaway Annual Meeting (Full Version)",
+                                                   "description":  "Berkshire Hathaway annual shareholder meeting (May 6, 1996) Video combines Morning session \u0026 Afternoon session.",
+                                                   "duration":  18067
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=kgKEiP6L9EQ",
+                           "post_id":  "kgKEiP6L9EQ",
+                           "author_hint":  "Investor Archive",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Archive",
+                                                   "upload_date":  null,
+                                                   "title":  "1994 Berkshire Hathaway Annual Meeting (Full Version)",
+                                                   "description":  "Berkshire Hathaway annual shareholder meeting (April 25, 1994) Video combines Morning session \u0026 Afternoon session.",
+                                                   "duration":  12748
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=mdX5JbDUYs4",
+                           "post_id":  "mdX5JbDUYs4",
+                           "author_hint":  "Investor Archive",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett annual meeting",
+                           "metadata_inline":  {
+                                                   "uploader":  "Investor Archive",
+                                                   "upload_date":  null,
+                                                   "title":  "1995 Berkshire Hathaway Annual Meeting (Full Version)",
+                                                   "description":  "Berkshire Hathaway annual shareholder meeting (May 1, 1995) Video combines Morning session \u0026 Afternoon session.",
+                                                   "duration":  16946
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=rEZukMdkQiA",
+                           "post_id":  "rEZukMdkQiA",
+                           "author_hint":  "Aurinna",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett interview",
+                           "metadata_inline":  {
+                                                   "uploader":  "Aurinna",
+                                                   "upload_date":  null,
+                                                   "title":  "Warren Buffett \u0026 Charlie Munger: 100 Years of Financial Wisdom in 4 Hour - Investing/Market Analysis",
+                                                   "description":  "Like the video? Every thumbs up helps! Also be sure to subscribe to get updates whenever I upload! It\u0027s free for you, and it helps ...",
+                                                   "duration":  14375
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       },
+                       {
+                           "post_url":  "https://www.youtube.com/watch?v=Tr6MMsoWAog",
+                           "post_id":  "Tr6MMsoWAog",
+                           "author_hint":  "Yahoo Finance",
+                           "source_type":  "youtube_search",
+                           "discovered_by":  "yt_dlp_search",
+                           "matched_query":  "Warren Buffett interview",
+                           "metadata_inline":  {
+                                                   "uploader":  "Yahoo Finance",
+                                                   "upload_date":  null,
+                                                   "title":  "Warren Buffett shares advice on becoming successful",
+                                                   "description":  "warrenbuffett #investing #success #money #business #finance #stocks #motivation #wealth Berkshire Hathaway CEO Warren ...",
+                                                   "duration":  533
+                                               },
+                           "status":  "needs_fact_check",
+                           "rights_status":  "review_required"
+                       }
+                   ]
+}

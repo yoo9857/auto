@@ -1,0 +1,17 @@
+﻿{
+    "subtitle":  "C:\\work\\output\\clip-extraction\\buffett\\source.en-orig.vtt",
+    "terms":  [
+                  "Warren Buffett",
+                  "annual meeting"
+              ],
+    "person_name":  "Warren Buffett",
+    "strategy":  "person_self_identification",
+    "clip_start":  "00:03:02",
+    "clip_end":  "00:03:14",
+    "matched_terms":  "Warren Buffett",
+    "self_introduction":  true,
+    "host_introduction":  false,
+    "cue_text":  "first introduce our directors and and uh uh I\u0027m I\u0027m Warren Buffett and I was born",
+    "review_status":  "needs_clip_review",
+    "created_at":  "2026-07-15T07:51:12.6125744Z"
+}

@@ -1,0 +1,20 @@
+﻿{
+    "subtitle":  "C:\\work\\output\\jobs\\28c78035-f7b4-4f0d-b7be-eccbca1d8620\\_subtitles\\source.en-orig.vtt",
+    "terms":  [
+                  "Warren Buffett",
+                  "annual meeting",
+                  "interview",
+                  "speech",
+                  "remarks",
+                  "conversation"
+              ],
+    "strategy":  "recent_person_voice_visual_review",
+    "clip_start":  "00:23:53",
+    "clip_end":  "00:24:05",
+    "matched_terms":  "Warren Buffett",
+    "cue_text": "I'm not a religious guy, but I mean nobody's said it any better than in a couple thousand years.",
+    "self_introduction":  true,
+    "host_introduction":  false,
+    "review_status":  "needs_clip_review",
+    "created_at":  "2026-07-15T07:23:12.4218709Z"
+}

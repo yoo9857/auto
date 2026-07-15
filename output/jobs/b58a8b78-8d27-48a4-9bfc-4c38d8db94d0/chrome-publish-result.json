@@ -1,0 +1,20 @@
+{
+  "posted_at": "2026-07-15T07:11:18.353Z",
+  "mode": "chrome_session",
+  "plan": {
+    "article_id": "b58a8b78-8d27-48a4-9bfc-4c38d8db94d0",
+    "account": "@onedaytrading.io",
+    "job_path": "C:\\work\\output\\jobs\\b58a8b78-8d27-48a4-9bfc-4c38d8db94d0\\job.final.json",
+    "status_required": "approved",
+    "image_paths": [
+      "C:\\work\\DB\\step1\\page-01-hook.png",
+      "C:\\work\\DB\\step1\\page-02-evidence.mp4",
+      "C:\\work\\DB\\step1\\page-03-analysis.png",
+      "C:\\work\\DB\\step1\\page-04-judgment.png",
+      "C:\\work\\DB\\step1\\page-05-cta.png"
+    ],
+    "source_folder": "C:\\work\\DB\\step1",
+    "caption": "긴급속보\n엔비디아 H200 중국 출하 시작\n\n최상위 AI칩까지 넘어선 미국의 수출 규제선\n\n원문과 핵심 분석은 프로필 링크에서 확인하세요.\n\nODT-b58a8b78-8d27-48a4-9bfc-4c38d8db94d0\n#해외주식 #국내주식 #증시뉴스 #onedaytrading",
+    "created_at": "2026-07-15T07:11:03.293Z"
+  }
+}

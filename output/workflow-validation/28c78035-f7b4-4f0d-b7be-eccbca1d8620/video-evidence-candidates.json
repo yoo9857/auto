@@ -1,0 +1,45 @@
+﻿{
+    "generated_at":  "2026-07-15T06:39:42.1033995Z",
+    "selector_version":  "2.2.0",
+    "selection_mode":  "evidence",
+    "topic":  "Warren Buffett",
+    "topic_aliases":  [
+                          "Berkshire Hathaway",
+                          "Berkshire B",
+                          "Buffett foundation donation"
+                      ],
+    "event_terms":  [
+                        "Gates Foundation",
+                        "Bill Gates",
+                        "foundation donation",
+                        "Berkshire donation"
+                    ],
+    "format_terms":  null,
+    "reference_date":  "2026-07-15",
+    "policy":  {
+                   "gates":  [
+                                 "confirmed_video",
+                                 "topic_match",
+                                 "event_match",
+                                 "person_format_match",
+                                 "publish_date",
+                                 "age_window",
+                                 "duration_window"
+                             ],
+                   "allow_unknown_publish_date":  false,
+                   "ranking":  [
+                                   "quality_grade",
+                                   "newest_published_at",
+                                   "quality_score"
+                               ],
+                   "minimum_grade":  "A",
+                   "automatic_download":  false,
+                   "automatic_publish":  false
+               },
+    "recommended_candidate":  [
+
+                              ],
+    "candidates":  [
+
+                   ]
+}

@@ -1,0 +1,47 @@
+{
+  "workflow_version": "2.1.0",
+  "templates": {
+    "page1": "2.1.0",
+    "page2": "2.1.0",
+    "page3": "2.1.0",
+    "page4": "2.1.0"
+  },
+  "brand": {
+    "instagram_handle": "@onedaytrading.io",
+    "instagram_url": "https://www.instagram.com/onedaytrading.io/",
+    "website": "https://onedaytrading.net",
+    "logo": "NEWLOGO.png"
+  },
+  "instagram": {
+    "handle": "@onedaytrading.io",
+    "profile_url": "https://www.instagram.com/onedaytrading.io/",
+    "api_version": "v24.0",
+    "access_token_env": "ODT_INSTAGRAM_ACCESS_TOKEN",
+    "media_id_env": "ODT_INSTAGRAM_MEDIA_ID",
+    "tracking_prefix": "ODT",
+    "insights_mode": "manual"
+  },
+  "render": {
+    "width": 1080,
+    "height": 1350,
+    "font_title": "Noto Sans KR Black",
+    "font_body": "Noto Sans KR"
+  },
+  "limits": {
+    "page1_headline_chars": 38,
+    "page1_subtitle_chars": 58,
+    "page2_headline_chars": 42,
+    "page2_paragraphs": 3,
+    "page3_paragraphs": 3,
+    "memory_line_chars": 48
+  },
+  "quality": {
+    "minimum_evidence_confidence": 0.85,
+    "minimum_score": 10,
+    "require_manual_approval": true
+  },
+  "providers": {
+    "copy_webhook_env": "ODT_COPY_WEBHOOK",
+    "image_webhook_env": "ODT_IMAGE_WEBHOOK"
+  }
+}
