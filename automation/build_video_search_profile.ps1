@@ -18,6 +18,14 @@ elseif ($text -match '(?i)\uC6CC\uB7F0\s*\uBC84\uD54F|Warren\s*Buffett|\uBC84\uD
 elseif ($text -match '(?i)\uC0BC\uC131\uC804\uC790|Samsung\s*Electronics') {
     $profile = [ordered]@{ topic='Samsung Electronics'; aliases=@('Samsung','Samsung semiconductor'); event_terms=@(); person_name=''; person_format_terms=@(); official_channel_hints=@('Samsung Electronics'); minimum_grade='A'; context_minimum_grade='S'; confidence='high'; matched_rule='samsung' }
 }
+elseif ($text -match '(?i)\bOpenAI\b|\uC624\uD508\s?AI|ChatGPT|\uCC57GPT|Sam\s*Altman|\uC0D8\s*\uC62C\uD2B8\uBA3C') {
+    $profile = [ordered]@{ topic='OpenAI'; aliases=@('ChatGPT','Sam Altman','OpenAI'); event_terms=@('valuation','funding round','secondary market','investment','Anthropic'); person_name='Sam Altman'; person_format_terms=@('interview','keynote','talk','conference','fireside'); official_channel_hints=@('OpenAI'); minimum_grade='A'; context_minimum_grade='S'; confidence='high'; matched_rule='openai' }
+}
+# AI-derived override: if an upstream step (generate_copy) already locked a safe topic,
+# keep it instead of falling back to the editor-required stop.
+elseif ($job.video_search_profile -and $job.video_search_profile.topic -and $job.video_search_profile.matched_rule -eq 'ai_derived') {
+    $profile = $job.video_search_profile
+}
 else {
     # A fallback is intentionally not auto-searched: an editor must lock a precise topic first.
     $profile = [ordered]@{ topic=''; aliases=@(); event_terms=@(); person_name=''; person_format_terms=@(); official_channel_hints=@(); minimum_grade='A'; context_minimum_grade='S'; confidence='low'; matched_rule='none'; reason='No safe topic entity could be derived automatically.' }

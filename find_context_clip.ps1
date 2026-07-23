@@ -37,7 +37,21 @@ for($index=0;$index -lt $lines.Count;$index++){
 }
 if(-not $cues){throw 'No usable subtitle cues found.'}
 $eligible=$cues
-if($RequirePersonVoice){$eligible=@($cues|Where-Object{$_.self_introduction});if(-not $eligible){throw "No self-identification cue found for '$PersonName'. Reject this source rather than using a host or another person."}}
+# Person clips: PREFER a self-identification cue, but never hard-fail without one.
+# Keynotes/interviews almost never contain a literal "I'm <name>", so the old hard
+# throw dropped nearly every source to the still fallback. Degrade gracefully to the
+# best topic-relevant, non-host-dominated segment and let it run as CONTEXT footage
+# (page 2 already reads "관련 영상 · 맥락", so this is honest, not misleading).
+if($RequirePersonVoice){
+    $voice=@($cues|Where-Object{$_.self_introduction})
+    if($voice){$eligible=$voice}
+    else{
+        $ctx=@($cues|Where-Object{$_.matches.Count -gt 0 -and -not $_.host_introduction})
+        if(-not $ctx){$ctx=@($cues|Where-Object{-not $_.host_introduction})}
+        if(-not $ctx){$ctx=$cues}
+        $eligible=$ctx
+    }
+}
 $best=@($eligible|Sort-Object @{Expression='score';Descending=$true},@{Expression='start';Descending=$false}|Select-Object -First 1)
 $strategy=if($best.self_introduction){'person_self_identification'}elseif($best.score -gt 0){'keyword_match'}else{'opening_context_fallback'}
 $selection=[ordered]@{subtitle=[IO.Path]::GetFullPath($Subtitle);terms=$terms;person_name=$PersonName;strategy=$strategy;clip_start=ToTimestamp $best.start;clip_end=ToTimestamp ($best.start+$ClipSeconds);matched_terms=$best.matches;self_introduction=$best.self_introduction;host_introduction=$best.host_introduction;cue_text=$best.text;review_status='needs_clip_review';created_at=(Get-Date).ToUniversalTime().ToString('o')}

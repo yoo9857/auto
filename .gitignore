@@ -1,7 +1,10 @@
 node_modules/
 .agents/
+tools/
 output/_tests/
 output/x-candidates/
+output/jobs/
+DB/
 **/qa-*.png
 **/qa-*.mp4
 **/_subtitles/

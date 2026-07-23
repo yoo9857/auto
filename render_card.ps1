@@ -68,6 +68,47 @@ function Draw-FitText($graphics, $text, $family, $maxSize, $minSize, $style, $br
     throw "Text does not fit: $text"
 }
 
+function New-RoundedRect([single]$x,[single]$y,[single]$w,[single]$h,[single]$r) {
+    $d = $r * 2
+    $path = New-Object System.Drawing.Drawing2D.GraphicsPath
+    $path.AddArc($x, $y, $d, $d, 180, 90)
+    $path.AddArc($x + $w - $d, $y, $d, $d, 270, 90)
+    $path.AddArc($x + $w - $d, $y + $h - $d, $d, $d, 0, 90)
+    $path.AddArc($x, $y + $h - $d, $d, $d, 90, 90)
+    $path.CloseFigure()
+    return $path
+}
+
+function Draw-HeadlineHL($graphics, $text, $family, $max, $min, $baseBrush, $accentBrush, $rect) {
+    # Auto-fit 2-line headline, drawing numeric tokens (10%, 800억, B300, H200 ...) in the accent color.
+    $lines = $text -split "`n"
+    $tp = [System.Drawing.StringFormat]::GenericTypographic
+    $size = $min
+    for ($s = $max; $s -ge $min; $s -= 2) {
+        $f = New-Object System.Drawing.Font($family, $s, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+        $ok = $true
+        foreach ($ln in $lines) { if ($graphics.MeasureString($ln, $f, 10000, $tp).Width -gt $rect.Width) { $ok = $false } }
+        $th = $f.GetHeight($graphics) * 1.14 * $lines.Count
+        $f.Dispose()
+        if ($ok -and $th -le $rect.Height) { $size = $s; break }
+    }
+    $font = New-Object System.Drawing.Font($family, $size, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+    $lineH = $font.GetHeight($graphics) * 1.14
+    $spaceW = $graphics.MeasureString("가 가", $font, 10000, $tp).Width - $graphics.MeasureString("가가", $font, 10000, $tp).Width
+    $y = $rect.Y
+    foreach ($ln in $lines) {
+        $x = $rect.X
+        foreach ($tok in ($ln -split ' ')) {
+            if ($tok -eq '') { $x += $spaceW; continue }
+            $brush = if ($tok -match '[0-9]') { $accentBrush } else { $baseBrush }
+            $graphics.DrawString($tok, $font, $brush, [single]$x, [single]$y, $tp)
+            $x += $graphics.MeasureString($tok, $font, 10000, $tp).Width + $spaceW
+        }
+        $y += $lineH
+    }
+    $font.Dispose()
+}
+
 $bg = [System.Drawing.Image]::FromFile((Resolve-Path $Background))
 Draw-CoverImage $g $bg $width $height
 
@@ -91,14 +132,33 @@ $muted = New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(2
 $cyan = New-Object System.Drawing.SolidBrush($primaryColor)
 $red = New-Object System.Drawing.SolidBrush($secondaryColor)
 
-$labelRect = New-Object System.Drawing.Rectangle(72, 68, 174, 50)
-$g.FillRectangle($red, $labelRect)
-$labelFont = New-Object System.Drawing.Font($fontFamily, 22, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
-$center = New-Object System.Drawing.StringFormat
-$center.Alignment = [System.Drawing.StringAlignment]::Center
-$center.LineAlignment = [System.Drawing.StringAlignment]::Center
-$labelTextRect = New-Object System.Drawing.RectangleF(72, 68, 174, 50)
-$g.DrawString($breakingLabel, $labelFont, $white, $labelTextRect, $center)
+# Trendy status chip: frosted-glass pill + sentiment glow dot + clean label.
+$sentColor = switch -Regex ($breakingLabel) {
+    '호재|상승|반등|긍정|훈풍' { [System.Drawing.Color]::FromArgb(255, 74, 222, 128) }   # emerald
+    '악재|하락|부정|경고|하향'  { [System.Drawing.Color]::FromArgb(255, 248, 113, 113) }  # red
+    '긴급|속보'                 { [System.Drawing.Color]::FromArgb(255, 255, 179, 71) }   # amber (urgent)
+    default                     { [System.Drawing.Color]::FromArgb(255, 148, 163, 184) }  # slate (neutral/분석)
+}
+$labelFont = New-Object System.Drawing.Font($fontFamily, 21, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel)
+$labelSize = $g.MeasureString($breakingLabel, $labelFont)
+$chipX = 72; $chipY = 66; $chipH = 54; $dotD = 12; $padL = 26; $padR = 30; $gap = 13
+$chipW = [single]($padL + $dotD + $gap + $labelSize.Width + $padR)
+$g.SmoothingMode = [System.Drawing.Drawing2D.SmoothingMode]::HighQuality
+$chip = New-RoundedRect $chipX $chipY $chipW $chipH ($chipH / 2)
+# frosted glass fill + hairline border
+$g.FillPath((New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(140, 10, 14, 22))), $chip)
+$chipPen = New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(48, 255, 255, 255), 1.4)
+$g.DrawPath($chipPen, $chip)
+# status dot with soft glow
+$dotX = $chipX + $padL; $dotY = $chipY + ($chipH - $dotD) / 2
+$g.FillEllipse((New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(70, $sentColor.R, $sentColor.G, $sentColor.B))), ($dotX - 7), ($dotY - 7), ($dotD + 14), ($dotD + 14))
+$g.FillEllipse((New-Object System.Drawing.SolidBrush($sentColor)), $dotX, $dotY, $dotD, $dotD)
+# label text (vertically centered)
+$chipFmt = New-Object System.Drawing.StringFormat
+$chipFmt.Alignment = [System.Drawing.StringAlignment]::Near
+$chipFmt.LineAlignment = [System.Drawing.StringAlignment]::Center
+$labelTextRect = New-Object System.Drawing.RectangleF(($dotX + $dotD + $gap), $chipY, ($labelSize.Width + 8), $chipH)
+$g.DrawString($breakingLabel, $labelFont, $white, $labelTextRect, $chipFmt)
 
 $headlineFormat = New-Object System.Drawing.StringFormat
 $headlineFormat.Alignment = [System.Drawing.StringAlignment]::Near
@@ -106,9 +166,8 @@ $headlineFormat.LineAlignment = [System.Drawing.StringAlignment]::Near
 $headlineFormat.Trimming = [System.Drawing.StringTrimming]::Word
 $headlineFormat.FormatFlags = [System.Drawing.StringFormatFlags]::LineLimit
 
-$titleRect = New-Object System.Drawing.RectangleF(72, 153, 790, 235)
-Draw-FitText $g $headline $titleFontFamily 72 48 `
-    ([System.Drawing.FontStyle]::Bold) $white $titleRect $headlineFormat
+$titleRect = New-Object System.Drawing.RectangleF(72, 153, 800, 235)
+Draw-HeadlineHL $g $headline $titleFontFamily 72 48 $white $cyan $titleRect
 
 $accentRect = New-Object System.Drawing.Rectangle(72, 410, 104, 7)
 $g.FillRectangle($cyan, $accentRect)
@@ -154,7 +213,7 @@ $canvas.Save([System.IO.Path]::GetFullPath($Output), [System.Drawing.Imaging.Ima
 if ($pageFont) { $pageFont.Dispose() }
 $disclaimerFont.Dispose(); $footerFont.Dispose(); $logoImg.Dispose()
 $rulePen.Dispose(); $ctaFont.Dispose(); $ctaFormat.Dispose()
-$headlineFormat.Dispose(); $center.Dispose(); $labelFont.Dispose()
+$headlineFormat.Dispose(); $chipFmt.Dispose(); $chipPen.Dispose(); $labelFont.Dispose()
 $white.Dispose(); $muted.Dispose(); $cyan.Dispose(); $red.Dispose()
 $topBrush.Dispose(); $bottomBrush.Dispose(); $bg.Dispose(); $g.Dispose(); $canvas.Dispose()
 

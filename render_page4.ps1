@@ -47,6 +47,14 @@ $muted=New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(170
 $cyan=New-Object System.Drawing.SolidBrush($primaryColor)
 $red=New-Object System.Drawing.SolidBrush($secondaryColor)
 
+# Contrast helpers: keep labels/buttons readable on the dark canvas regardless of palette.
+function Lum($c){ return (0.299*$c.R + 0.587*$c.G + 0.114*$c.B) }
+function TextColorOn($c){ if((Lum $c) -gt 150){ return [System.Drawing.Color]::FromArgb(255,12,16,22) } else { return [System.Drawing.Color]::White } }
+function BrightAccent($c){ $l=Lum $c; if($l -ge 155){ return $c }; $t=(155-$l)/(255.0-$l); return [System.Drawing.Color]::FromArgb(255,[int]($c.R+(255-$c.R)*$t),[int]($c.G+(255-$c.G)*$t),[int]($c.B+(255-$c.B)*$t)) }
+$accentWarm=New-Object System.Drawing.SolidBrush((BrightAccent $secondaryColor))
+$accentCool=New-Object System.Drawing.SolidBrush((BrightAccent $primaryColor))
+$pillText=New-Object System.Drawing.SolidBrush((TextColorOn $secondaryColor))
+
 function Fill-Pill($graphics,$brush,$x,$y,$width,$height) {
     $r=$height
     $graphics.FillRectangle($brush,$($x+$height/2),$y,$($width-$height),$height)
@@ -77,15 +85,15 @@ $g.FillRectangle($cyan,492,456,96,6)
 $g.DrawString("시장에 흩어진 신호를 읽기 쉬운 맥락으로 정리합니다.",$lead,$body,(New-Object System.Drawing.RectangleF(120,485,840,48)),$center)
 
 # Compact follow block without panel or border.
-$g.DrawString("매일 핵심 뉴스 받기",$micro,$red,(New-Object System.Drawing.RectangleF(220,596,640,28)),$center)
+$g.DrawString("매일 핵심 뉴스 받기",$micro,$accentWarm,(New-Object System.Drawing.RectangleF(220,596,640,28)),$center)
 $g.DrawString($InstagramHandle,$handle,$white,(New-Object System.Drawing.RectangleF(180,632,720,64)),$center)
 Fill-Pill $g $red 390 710 300 54
-$g.DrawString("팔로우하기  +",$cta,$white,(New-Object System.Drawing.RectangleF(390,710,300,54)),$center)
+$g.DrawString("팔로우하기  +",$cta,$pillText,(New-Object System.Drawing.RectangleF(390,710,300,54)),$center)
 
-$g.DrawString("더 많은 뉴스와 자료",$micro,$cyan,(New-Object System.Drawing.RectangleF(220,842,640,30)),$center)
+$g.DrawString("더 많은 뉴스와 자료",$micro,$accentCool,(New-Object System.Drawing.RectangleF(220,842,640,30)),$center)
 $g.DrawString("onedaytrading.net",$site,$white,(New-Object System.Drawing.RectangleF(120,878,840,60)),$center)
 $g.DrawString("증시 분석  ·  종목별 뉴스  ·  시장 자료",$cta,$body,(New-Object System.Drawing.RectangleF(180,939,720,34)),$center)
-$g.DrawString("사이트에서 더 보기  ↗",$cta,$cyan,(New-Object System.Drawing.RectangleF(340,982,400,40)),$center)
+$g.DrawString("사이트에서 더 보기  ↗",$cta,$accentCool,(New-Object System.Drawing.RectangleF(340,982,400,40)),$center)
 
 
 $dir=Split-Path -Parent $Output
@@ -102,6 +110,6 @@ $bmp.Save([System.IO.Path]::GetFullPath($Output),[System.Drawing.Imaging.ImageFo
 
 $logoImg.Dispose(); $center.Dispose(); $cta.Dispose(); $site.Dispose(); $handle.Dispose()
 $lead.Dispose(); $title.Dispose(); $micro.Dispose()
-$red.Dispose(); $cyan.Dispose(); $muted.Dispose(); $body.Dispose(); $white.Dispose(); $base.Dispose()
+$red.Dispose(); $cyan.Dispose(); $accentWarm.Dispose(); $accentCool.Dispose(); $pillText.Dispose(); $muted.Dispose(); $body.Dispose(); $white.Dispose(); $base.Dispose()
 $g.Dispose(); $bmp.Dispose()
 Write-Output (Resolve-Path $Output)

@@ -66,9 +66,28 @@ $articleFont = New-Object System.Drawing.Font($family,29,[System.Drawing.FontSty
 $footerFont = New-Object System.Drawing.Font($family,22,[System.Drawing.FontStyle]::Bold,[System.Drawing.GraphicsUnit]::Pixel)
 $smallFont = New-Object System.Drawing.Font($family,16,[System.Drawing.FontStyle]::Regular,[System.Drawing.GraphicsUnit]::Pixel)
 
-$g.DrawString("MARKET ANALYSIS · $sectionNumber", $eyebrowFont, $blue, 72, 60)
-$headlineRect = New-Object System.Drawing.RectangleF(72,108,880,174)
-$g.DrawString($analysisHeadline, $titleFont, $white, $headlineRect, $fmt)
+# Auto-shrink body text so long copy never clips the fixed reading area.
+function Draw-FitText($graphics,$text,$fam,$max,$min,$style,$brush,$rect,$format){
+    for($size=$max;$size -ge $min;$size-=1){
+        $font=New-Object System.Drawing.Font($fam,$size,$style,[System.Drawing.GraphicsUnit]::Pixel)
+        $measured=$graphics.MeasureString($text,$font,$rect.Size,$format)
+        if($measured.Height -le $rect.Height){$graphics.DrawString($text,$font,$brush,$rect,$format);$font.Dispose();return}
+        $font.Dispose()
+    }
+    $font=New-Object System.Drawing.Font($fam,$min,$style,[System.Drawing.GraphicsUnit]::Pixel);$graphics.DrawString($text,$font,$brush,$rect,$format);$font.Dispose()
+}
+
+function Draw-HeadlineHL($graphics, $text, $family, $max, $min, $baseBrush, $accentBrush, $rect) {
+    $lines = $text -split "`n"; $tp = [System.Drawing.StringFormat]::GenericTypographic; $size = $min
+    for ($s = $max; $s -ge $min; $s -= 2) { $f = New-Object System.Drawing.Font($family, $s, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel); $ok = $true; foreach ($ln in $lines) { if ($graphics.MeasureString($ln, $f, 10000, $tp).Width -gt $rect.Width) { $ok = $false } }; $th = $f.GetHeight($graphics) * 1.14 * $lines.Count; $f.Dispose(); if ($ok -and $th -le $rect.Height) { $size = $s; break } }
+    $font = New-Object System.Drawing.Font($family, $size, [System.Drawing.FontStyle]::Bold, [System.Drawing.GraphicsUnit]::Pixel); $lineH = $font.GetHeight($graphics) * 1.14
+    $spaceW = $graphics.MeasureString("가 가", $font, 10000, $tp).Width - $graphics.MeasureString("가가", $font, 10000, $tp).Width; $yy = $rect.Y
+    foreach ($ln in $lines) { $xx = $rect.X; foreach ($tok in ($ln -split ' ')) { if ($tok -eq '') { $xx += $spaceW; continue }; $brush = if ($tok -match '[0-9]') { $accentBrush } else { $baseBrush }; $graphics.DrawString($tok, $font, $brush, [single]$xx, [single]$yy, $tp); $xx += $graphics.MeasureString($tok, $font, 10000, $tp).Width + $spaceW }; $yy += $lineH }
+    $font.Dispose()
+}
+$g.DrawString("핵심 분석", $eyebrowFont, $blue, 72, 60)
+$headlineRect = New-Object System.Drawing.RectangleF(72,108,880,180)
+Draw-HeadlineHL $g $analysisHeadline $blackFamily 58 40 $white $blue $headlineRect
 $g.FillRectangle($blue, 72, 281, 104, 7)
 
 $leadRect = New-Object System.Drawing.RectangleF(72,314,906,92)

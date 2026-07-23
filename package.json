@@ -9,7 +9,9 @@
     "instagram:check-background": "node automation/chrome_instagram_publisher.js check --background",
     "instagram:plan": "node automation/chrome_instagram_publisher.js plan",
     "instagram:publish": "node automation/chrome_instagram_publisher.js publish",
-    "instagram:publish-background": "node automation/chrome_instagram_publisher.js publish --background"
+    "instagram:publish-background": "node automation/chrome_instagram_publisher.js publish --background",
+    "instagram:meta-plan": "node automation/meta_instagram_publisher.js",
+    "instagram:meta-publish": "node automation/meta_instagram_publisher.js"
   },
   "dependencies": {
     "playwright": "^1.55.0"

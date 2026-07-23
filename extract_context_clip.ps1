@@ -12,11 +12,14 @@ param(
 $ErrorActionPreference='Stop'
 if(-not(Test-Path -LiteralPath $YtDlpPath)){throw "yt-dlp not found: $YtDlpPath"}
 if(-not(Test-Path -LiteralPath $FfmpegPath)){throw "ffmpeg not found: $FfmpegPath"}
+# yt-dlp --download-sections needs ffmpeg; --ffmpeg-location must be an absolute path.
+$FfmpegPath=(Resolve-Path -LiteralPath $FfmpegPath).Path
+$FfmpegLocation=Split-Path -Parent $FfmpegPath
 $outputPath=[IO.Path]::GetFullPath($Output);$outputDir=Split-Path -Parent $outputPath;New-Item -ItemType Directory -Force -Path $outputDir|Out-Null
 $work=Join-Path $env:TEMP ('n200-context-'+[guid]::NewGuid());New-Item -ItemType Directory -Force -Path $work|Out-Null
 try{
     $template=Join-Path $work 'clip.%(ext)s'
-    & $YtDlpPath '--no-playlist' '--download-sections' "*$Start-$End" '--force-keyframes-at-cuts' '--remux-video' 'mp4' '--ffmpeg-location' $FfmpegPath '-f' 'best[height<=720]/best' '-o' $template $VideoUrl
+    & $YtDlpPath '--no-playlist' '--download-sections' "*$Start-$End" '--force-keyframes-at-cuts' '--remux-video' 'mp4' '--ffmpeg-location' $FfmpegLocation '-f' 'best[height<=720]/best' '-o' $template $VideoUrl
     if($LASTEXITCODE -ne 0){throw 'Context clip extraction failed.'}
     $clip=Get-ChildItem -LiteralPath $work -Filter '*.mp4'|Select-Object -First 1
     if(-not $clip){throw 'No MP4 clip was produced.'}

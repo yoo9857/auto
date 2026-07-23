@@ -44,17 +44,26 @@ $jobPath=Join-Path $jobDir 'job.json'
 if(-not(Test-Path -LiteralPath $jobPath)){throw "Job was not created: $jobPath"}
 $job=Get-Content -Raw -Encoding UTF8 $jobPath | ConvertFrom-Json
 
-# Phase 2: a link-only job gets a review-required article visual automatically.
-if(-not $job.visual.background_path){
-    if(-not $job.article.og_image){throw 'The article has no OG image. Supply an approved background before rendering.'}
+# Phase 2 (upgraded): AI copy + recompose background (text removed, logo kept, 4:5).
+if(-not $env:OPENAI_API_KEY){$env:OPENAI_API_KEY=[Environment]::GetEnvironmentVariable('OPENAI_API_KEY','User')}
+$env:COPY_ENGINE='claude'
+Write-Host 'AI 카피 생성 (claude)...' -ForegroundColor Cyan
+& node (Join-Path $root 'automation/generate_copy.js') $jobPath
+if($LASTEXITCODE -ne 0){throw '카피 생성 실패'}
+Write-Host '배경 recompose (codex)...' -ForegroundColor Cyan
+& node (Join-Path $root 'automation/generate_background.js') $jobPath --engine codex
+if($LASTEXITCODE -ne 0){
+    Write-Warning '생성형 배경 실패 -> og:image 폴백'
+    $job=Get-Content -Raw -Encoding UTF8 $jobPath|ConvertFrom-Json
+    if(-not $job.article.og_image){throw 'The article has no OG image and background generation failed.'}
     $backgroundPath=Join-Path $jobDir 'article-background.jpg'
     Invoke-WebRequest -Uri $job.article.og_image -OutFile $backgroundPath -UseBasicParsing
-    if(-not(Test-Path -LiteralPath $backgroundPath)){throw 'Article background download failed.'}
     $job.visual.background_path=(Resolve-Path $backgroundPath).Path
-    $job.visual.strategy='article_og_image'
-    $job.visual.license='review_required'
+    $job.visual.strategy='article_og_image'; $job.visual.license='review_required'
     Save-Utf8Json $job $jobPath
 }
+& (Join-Path $root 'automation/resolve_palette.ps1') -JobPath $jobPath -Mode match | Out-Null
+$job=Get-Content -Raw -Encoding UTF8 $jobPath | ConvertFrom-Json
 
 # Phase 3: download only an editorially matched excerpt. Never turn context footage into event proof.
 $job=Get-Content -Raw -Encoding UTF8 $jobPath | ConvertFrom-Json
@@ -77,7 +86,10 @@ if($candidate.clip_required){
     $terms=@($job.video_search_profile.person_name)+@($job.video_search_profile.topic)+@($job.video_search_profile.format_terms)+@($job.video_search_profile.person_format_terms) | Where-Object {$_} | Select-Object -Unique
     $personName=[string]$job.video_search_profile.person_name
     $clipArgs=@{Subtitle=$subtitle.FullName;Terms=$terms;ClipSeconds=12;Output=$clipSelectionPath}
-    if($isContext -and $personName){$clipArgs.PersonName=$personName;$clipArgs.RequirePersonVoice=$true}
+    # Official-channel footage and titled person interviews/talks don't need speaker
+    # self-identification; require it only for third-party clips that might feature a host.
+    $isInterviewTitle=$candidate.title -and (@($job.video_search_profile.person_format_terms|Where-Object{$_ -and ([string]$candidate.title) -match [regex]::Escape($_)}).Count -gt 0)
+    if($isContext -and $personName -and -not $candidate.official_author_match -and -not $isInterviewTitle){$clipArgs.PersonName=$personName;$clipArgs.RequirePersonVoice=$true}
     & (Join-Path $root 'find_context_clip.ps1') @clipArgs
     $selection=Get-Content -Raw -Encoding UTF8 $clipSelectionPath | ConvertFrom-Json
     & (Join-Path $root 'extract_context_clip.ps1') -VideoUrl $sourceUrl -Start $selection.clip_start -End $selection.clip_end -Output $clipPath -YtDlpPath $yt -FfmpegPath $ffmpeg -SourceLabel "CONTEXT VIDEO / $author" -UsageRule 'Context footage only; not proof of the article event.'

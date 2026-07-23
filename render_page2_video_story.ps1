@@ -1,11 +1,11 @@
-param(
+﻿param(
     [Parameter(Mandatory=$true)][string]$Video,
     [Parameter(Mandatory=$true)][string]$Headline,
     [Parameter(Mandatory=$true)][string]$Summary,
     [string]$SourceLabel = 'SOURCE / VERIFY BEFORE POSTING',
     # Displayed inside the video frame at bottom-right for third-party footage.
     [string]$CopyrightLabel = '',
-    [string]$EyebrowText = 'N200 / EVIDENCE',
+    [string]$EyebrowText = '관련 영상',
     [string]$Logo = 'NEWLOGO.png',
     [string]$Output = 'output/page-02-video-story.mp4',
     [string]$FfmpegPath = '',
@@ -31,6 +31,14 @@ function Draw-FitText($g,$Text,$Family,$Max,$Min,$Style,$Brush,$Rect,$Fmt){
     throw "Text does not fit. Shorten the headline or summary."
 }
 
+function Draw-HeadlineHL($graphics,$text,$family,$max,$min,$baseBrush,$accentBrush,$rect){
+    $lines=$text -split "`n";$tp=[System.Drawing.StringFormat]::GenericTypographic;$size=$min
+    for($s=$max;$s -ge $min;$s-=2){$f=New-Object System.Drawing.Font($family,$s,[System.Drawing.FontStyle]::Bold,[System.Drawing.GraphicsUnit]::Pixel);$ok=$true;foreach($ln in $lines){if($graphics.MeasureString($ln,$f,10000,$tp).Width -gt $rect.Width){$ok=$false}};$th=$f.GetHeight($graphics)*1.14*$lines.Count;$f.Dispose();if($ok -and $th -le $rect.Height){$size=$s;break}}
+    $font=New-Object System.Drawing.Font($family,$size,[System.Drawing.FontStyle]::Bold,[System.Drawing.GraphicsUnit]::Pixel);$lineH=$font.GetHeight($graphics)*1.14
+    $spaceW=$graphics.MeasureString("가 가",$font,10000,$tp).Width-$graphics.MeasureString("가가",$font,10000,$tp).Width;$yy=$rect.Y
+    foreach($ln in $lines){$xx=$rect.X;foreach($tok in ($ln -split ' ')){if($tok -eq ''){$xx+=$spaceW;continue};$brush=if($tok -match '[0-9]'){$accentBrush}else{$baseBrush};$graphics.DrawString($tok,$font,$brush,[single]$xx,[single]$yy,$tp);$xx+=$graphics.MeasureString($tok,$font,10000,$tp).Width+$spaceW};$yy+=$lineH}
+    $font.Dispose()
+}
 $w=1080;$h=1350;$lowerY=$VideoHeight;$outPath=[IO.Path]::GetFullPath($Output);$outDir=Split-Path -Parent $outPath;New-Item -ItemType Directory -Force -Path $outDir|Out-Null
 $work=Join-Path $env:TEMP ('page2-video-'+[guid]::NewGuid());New-Item -ItemType Directory -Force -Path $work|Out-Null;$overlayPath=Join-Path $work 'overlay.png'
 try{
@@ -52,20 +60,22 @@ try{
         $creditInk.Dispose();$creditBg.Dispose();$creditFont.Dispose();$creditFmt.Dispose()
     }
     $fmt=New-Object Drawing.StringFormat;$fmt.Trimming=[Drawing.StringTrimming]::EllipsisWord
-    $eyebrow=New-Object Drawing.Font('Noto Sans KR',18,[Drawing.FontStyle]::Bold,[Drawing.GraphicsUnit]::Pixel);$g.DrawString($EyebrowText,$eyebrow,$blue,72,$lowerY+34)
-    $g.FillRectangle($red,72,$lowerY+61,54,3)
-    $titleRect=[Drawing.RectangleF]::new(72.0,[single]($lowerY+72),920.0,155.0);Draw-FitText $g $Headline 'Noto Sans KR Black' 58 38 ([Drawing.FontStyle]::Bold) $ink $titleRect $fmt
-    $g.DrawLine($rule,72,$lowerY+248,1008,$lowerY+248)
-    $summaryRect=[Drawing.RectangleF]::new(72.0,[single]($lowerY+280),900.0,128.0);Draw-FitText $g $Summary 'Noto Sans KR' 30 22 ([Drawing.FontStyle]::Regular) $ink $summaryRect $fmt
+    $eyebrow=New-Object Drawing.Font('Noto Sans KR',19,[Drawing.FontStyle]::Bold,[Drawing.GraphicsUnit]::Pixel);$g.DrawString($EyebrowText,$eyebrow,$blue,72,$lowerY+30)
+    $titleRect=[Drawing.RectangleF]::new(72.0,[single]($lowerY+64),940.0,150.0);Draw-HeadlineHL $g $Headline 'Noto Sans KR Black' 58 40 $ink $blue $titleRect
+    $g.FillRectangle($blue,72,($lowerY+220),64,5)
+    $summaryRect=[Drawing.RectangleF]::new(72.0,[single]($lowerY+250),920.0,150.0);Draw-FitText $g $Summary 'Noto Sans KR' 31 22 ([Drawing.FontStyle]::Regular) $muted $summaryRect $fmt
     $g.DrawLine($rule,72,1207,1008,1207)
     $logoImg=[Drawing.Image]::FromFile((Resolve-Path $Logo));$g.DrawImage($logoImg,(New-Object Drawing.Rectangle(72,1231,58,58)))
-    $footer=New-Object Drawing.Font('Noto Sans KR',22,[Drawing.FontStyle]::Bold,[Drawing.GraphicsUnit]::Pixel);$g.DrawString('NEWS SIGNAL / CONTEXT / JUDGMENT',$footer,$ink,151,1242)
+    $footer=New-Object Drawing.Font('Noto Sans KR',22,[Drawing.FontStyle]::Bold,[Drawing.GraphicsUnit]::Pixel);$g.DrawString('뉴스 · 맥락 · 판단',$footer,$ink,151,1242)
     $right=New-Object Drawing.StringFormat;$right.Alignment=[Drawing.StringAlignment]::Far;$g.DrawString($PageNumber,$footer,$muted,(New-Object Drawing.RectangleF(830,1242,178,34)),$right)
     $overlay.Save($overlayPath,[Drawing.Imaging.ImageFormat]::Png)
     $right.Dispose();$footer.Dispose();$logoImg.Dispose();$eyebrow.Dispose();$fmt.Dispose();$sourceFont.Dispose();$sourceBg.Dispose();$rule.Dispose();$panel.Dispose();$red.Dispose();$blue.Dispose();$muted.Dispose();$ink.Dispose();$white.Dispose();$g.Dispose();$overlay.Dispose()
     # Draw the video first, then place the transparent text/footer layer on top.
-    $filter="[1:v]scale=1080:$VideoHeight`:force_original_aspect_ratio=decrease,pad=1080:$VideoHeight`:(ow-iw)/2`:(oh-ih)/2:color=0x101114[video];color=c=0x101114:s=1080x1350:d=$DurationSeconds[base];[base][video]overlay=0:0[withvideo];[withvideo][0:v]overlay=0:0:format=auto[out]"
-    $args=@('-y','-loop','1','-i',$overlayPath,'-stream_loop','-1','-i',$Video,'-t',$DurationSeconds.ToString(),'-filter_complex',$filter,'-map','[out]','-map','1:a?','-c:v','libx264','-pix_fmt','yuv420p','-c:a','aac','-shortest',$outPath)
+    # setpts=PTS-STARTPTS normalizes the clip's start timestamp to 0 (download-sections
+    # clips keep the original PTS, e.g. ~522s, which showed a black lead). Audio is
+    # dropped: IG carousel videos autoplay muted, and this avoids A/V desync.
+    $filter="[1:v]setpts=PTS-STARTPTS,scale=1080:$VideoHeight`:force_original_aspect_ratio=decrease,pad=1080:$VideoHeight`:(ow-iw)/2`:(oh-ih)/2:color=0x101114[video];color=c=0x101114:s=1080x1350:d=$DurationSeconds[base];[base][video]overlay=0:0[withvideo];[withvideo][0:v]overlay=0:0:format=auto[out]"
+    $args=@('-y','-loop','1','-i',$overlayPath,'-stream_loop','-1','-i',$Video,'-t',$DurationSeconds.ToString(),'-filter_complex',$filter,'-map','[out]','-an','-c:v','libx264','-pix_fmt','yuv420p',$outPath)
     & $FfmpegPath @args
     if($LASTEXITCODE -ne 0 -or -not(Test-Path $outPath)){throw 'Video render failed.'}
     Write-Output $outPath

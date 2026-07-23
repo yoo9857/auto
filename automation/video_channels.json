@@ -1,0 +1,15 @@
+{
+  "_comment": "Per-category trusted/official video channels fed to select_x_video_candidate as TrustedAuthors. Merged with the article's AI-derived official_channel_hints. Category is matched by substring against job.article.category.",
+  "default": ["Reuters", "AP", "Bloomberg", "CNBC", "연합뉴스", "연합뉴스TV", "YTN"],
+  "경제": ["CNBC", "Bloomberg", "Reuters", "연합뉴스TV", "한국경제TV", "매일경제TV", "Federal Reserve"],
+  "증시": ["CNBC", "Bloomberg", "연합뉴스TV", "한국경제TV"],
+  "크립토": ["Coindesk", "Bloomberg", "CNBC", "Binance"],
+  "부동산": ["연합뉴스TV", "YTN", "국토교통부", "KTV국민방송"],
+  "IT": ["NVIDIA", "OpenAI", "Apple", "Microsoft", "Google", "CNBC", "Bloomberg"],
+  "반도체": ["NVIDIA", "Samsung", "SK hynix", "TSMC", "CNBC"],
+  "모빌리티": ["Tesla", "현대자동차", "Hyundai", "CNBC", "Bloomberg"],
+  "바이오": ["연합뉴스TV", "Reuters", "Bloomberg"],
+  "산업": ["연합뉴스TV", "Bloomberg", "Reuters"],
+  "게임": ["IGN", "GameSpot", "PlayStation", "Xbox", "Nintendo"],
+  "엔터": ["연합뉴스TV"]
+}

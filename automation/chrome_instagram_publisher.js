@@ -81,10 +81,12 @@ async function ensureFourByFive(page) {
   await ratio.click({ force: true });
 }
 function buildCaption(job) {
+  // Prefer the algorithm-optimized AI caption (06) + 5 hashtags; fall back to the rule-based generator.
+  if (job.instagram_caption) {
+    const tags = Array.isArray(job.hashtags) && job.hashtags.length ? '\n\n' + job.hashtags.join(' ') : '';
+    return job.instagram_caption + tags;
+  }
   return createCaption(job).caption;
-  const p1 = job.pages.page1;
-  const tracking = job.instagram_tracking?.code || `ODT-${job.article.article_id}`;
-  return `${p1.breaking_label}\n${p1.headline.replace(/\n/g, ' ')}\n\n${p1.subtitle.replace(/\n/g, ' ')}\n\n원문과 핵심 분석은 프로필 링크에서 확인하세요.\n\n${tracking}\n#해외주식 #국내주식 #증시뉴스 #onedaytrading`;
 }
 function assetsFromDirectory(directory) {
   if (!directory || !fs.existsSync(directory)) throw new Error(`업로드 폴더를 찾지 못했습니다: ${directory}`);

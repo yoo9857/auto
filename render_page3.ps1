@@ -62,7 +62,18 @@ $articleFont=New-Object System.Drawing.Font($family,29,[System.Drawing.FontStyle
 $footerFont=New-Object System.Drawing.Font($family,22,[System.Drawing.FontStyle]::Bold,[System.Drawing.GraphicsUnit]::Pixel)
 $smallFont=New-Object System.Drawing.Font($family,16,[System.Drawing.FontStyle]::Regular,[System.Drawing.GraphicsUnit]::Pixel)
 
-$g.DrawString("INVESTOR VIEW · 03",$eyebrowFont,$blue,72,60)
+# Auto-shrink body text so long copy never clips the fixed reading area.
+function Draw-FitText($graphics,$text,$fam,$max,$min,$style,$brush,$rect,$format){
+    for($size=$max;$size -ge $min;$size-=1){
+        $font=New-Object System.Drawing.Font($fam,$size,$style,[System.Drawing.GraphicsUnit]::Pixel)
+        $measured=$graphics.MeasureString($text,$font,$rect.Size,$format)
+        if($measured.Height -le $rect.Height){$graphics.DrawString($text,$font,$brush,$rect,$format);$font.Dispose();return}
+        $font.Dispose()
+    }
+    $font=New-Object System.Drawing.Font($fam,$min,$style,[System.Drawing.GraphicsUnit]::Pixel);$graphics.DrawString($text,$font,$brush,$rect,$format);$font.Dispose()
+}
+
+$g.DrawString("투자 판단",$eyebrowFont,$blue,72,60)
 $titleRect=New-Object System.Drawing.RectangleF(72,108,890,174)
 $g.DrawString($evaluationHeadline,$titleFont,$white,$titleRect,$fmt)
 $g.FillRectangle($blue,72,281,104,7)
@@ -82,9 +93,27 @@ $bylineFont=New-Object System.Drawing.Font($family,17,[System.Drawing.FontStyle]
 $g.DrawString("ONEDAYTRADING 편집팀  |  $category·$marketLabel",$bylineFont,$muted,72,431)
 $g.DrawLine($border,72,474,1008,474)
 
-$article="기대할 것     $expect`n확인할 것     $verify`n판단할 것     $judge`n`n" + ($analysisParagraphs -join "`n`n")
-$articleRect=New-Object System.Drawing.RectangleF(76,526,902,560)
-$g.DrawString($article,$articleFont,$body,$articleRect,$fmt)
+# 기대/확인/판단 — designed tag rows (accent ghost tag + value).
+function RR([single]$x,[single]$y,[single]$w,[single]$h,[single]$r){$d=$r*2;$p=New-Object System.Drawing.Drawing2D.GraphicsPath;$p.AddArc($x,$y,$d,$d,180,90);$p.AddArc($x+$w-$d,$y,$d,$d,270,90);$p.AddArc($x+$w-$d,$y+$h-$d,$d,$d,0,90);$p.AddArc($x,$y+$h-$d,$d,$d,90,90);$p.CloseFigure();return $p}
+$rowsY=520;$rowH=62;$tagW=92;$tagH=44
+$tagFont=New-Object System.Drawing.Font($family,21,[System.Drawing.FontStyle]::Bold,[System.Drawing.GraphicsUnit]::Pixel)
+$valFont=New-Object System.Drawing.Font($family,28,[System.Drawing.FontStyle]::Regular,[System.Drawing.GraphicsUnit]::Pixel)
+$tagFill=New-Object System.Drawing.SolidBrush([System.Drawing.Color]::FromArgb(36,$primaryColor.R,$primaryColor.G,$primaryColor.B))
+$tagPen=New-Object System.Drawing.Pen([System.Drawing.Color]::FromArgb(150,$primaryColor.R,$primaryColor.G,$primaryColor.B),1.4)
+$midFmt=New-Object System.Drawing.StringFormat;$midFmt.Alignment=[System.Drawing.StringAlignment]::Center;$midFmt.LineAlignment=[System.Drawing.StringAlignment]::Center
+$leftMid=New-Object System.Drawing.StringFormat;$leftMid.LineAlignment=[System.Drawing.StringAlignment]::Center;$leftMid.Trimming=[System.Drawing.StringTrimming]::EllipsisWord;$leftMid.FormatFlags=[System.Drawing.StringFormatFlags]::NoWrap
+$rows=@(@('기대',$expect),@('확인',$verify),@('판단',$judge))
+for($i=0;$i -lt 3;$i++){
+    $ry=$rowsY+$i*$rowH
+    $tag=RR 76 $ry $tagW $tagH 12
+    $g.FillPath($tagFill,$tag);$g.DrawPath($tagPen,$tag)
+    $g.DrawString($rows[$i][0],$tagFont,$blue,(New-Object System.Drawing.RectangleF(76,$ry,$tagW,$tagH)),$midFmt)
+    $g.DrawString($rows[$i][1],$valFont,$white,(New-Object System.Drawing.RectangleF(190,$ry,818,$tagH)),$leftMid)
+}
+$rowsBottom=$rowsY+3*$rowH+14
+$g.DrawLine($border,72,$rowsBottom,1008,$rowsBottom)
+$paraRect=New-Object System.Drawing.RectangleF(76,($rowsBottom+24),902,(1122-($rowsBottom+24)))
+Draw-FitText $g ($analysisParagraphs -join "`n`n") $family 28 18 ([System.Drawing.FontStyle]::Regular) $body $paraRect $fmt
 
 $g.DrawLine($border,72,1145,1008,1145)
 $closingFont=New-Object System.Drawing.Font($family,19,[System.Drawing.FontStyle]::Bold,[System.Drawing.GraphicsUnit]::Pixel)
